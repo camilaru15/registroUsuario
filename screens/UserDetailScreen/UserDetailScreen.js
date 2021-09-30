@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ScrollView,Button,View,Alert, ActivityIndicator, StyleSheet} from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 
-import firebase from '../database/firebase';
+import firebase from '../../database/firebase';
 
 const UserDetailScreen = (props) => {
   const initialState = {

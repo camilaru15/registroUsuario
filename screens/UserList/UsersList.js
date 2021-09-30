@@ -3,7 +3,7 @@ import { Button, StyleSheet } from 'react-native';
 import { ListItem, Avatar } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import firebase from '../database/firebase';
+import firebase from '../../database/firebase';
 
 const UserScreen = (props) => {
   const [users, setUsers] = useState([]);

@@ -5,9 +5,10 @@ import { StyleSheet } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 //components
-import UsersList from './screens/UsersList';
-import CreateUserScreen from './screens/CreateUserScreen';
-import UserDetailScreen from './screens/UserDetailScreen';
+import UsersList from './screens/UserList/UsersList';
+import CreateUserScreen from './screens/createUserScreen/CreateUserScreen';
+import UserDetailScreen from './screens/UserDetailScreen/UserDetailScreen';
+//style
 
 const Stack = createNativeStackNavigator()
 
@@ -26,7 +27,9 @@ function MyStack() {
    >
     <Stack.Screen name="UserList"
      component={UsersList}
-      options={{titles: 'Users list'}}/>
+      options={{titles: 'Users list'}}
+      style={styles.container}  
+    />
     <Stack.Screen name="CreateUserScreen" 
     component={CreateUserScreen} 
     options={{title: 'Create a New User'}}/>
