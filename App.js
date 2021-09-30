@@ -1,21 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+//navigation
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-const Stack = createNativeStackNavigator()
-
+//components
 import UsersList from './screens/UsersList';
 import CreateUserScreen from './screens/CreateUserScreen';
 import UserDetailScreen from './screens/UserDetailScreen';
 
+const Stack = createNativeStackNavigator()
+
 function MyStack() {
   return (
-   <Stack.Navigator>
-     <Stack.Screen name="CreateUserScreen" component={CreateUserScreen}/>
-     <Stack.Screen name="UserList" component={UsersList}/>
-     <Stack.Screen name="UserDetailScreen" component={UserDetailScreen}/>
+   <Stack.Navigator
+   screenOptions={{
+    headerStyle: {
+      backgroundColor: "#621FF7",
+    },
+    headerTintColor: "#fff",
+    headerTitleStyle: {
+      fontWeight: "bold",
+    },
+  }}
+   >
+    <Stack.Screen name="UserList"
+     component={UsersList}
+      options={{titles: 'Users list'}}/>
+    <Stack.Screen name="CreateUserScreen" 
+    component={CreateUserScreen} 
+    options={{title: 'Create a New User'}}/>
+    <Stack.Screen name="UserDetailScreen"
+     component={UserDetailScreen}
+      options={{titles: 'User Detail'}}/>
    </Stack.Navigator>
   );
  }
