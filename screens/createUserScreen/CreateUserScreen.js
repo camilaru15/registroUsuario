@@ -1,9 +1,9 @@
 /*para guardar un estado se usa usestate */
 import React, { useState } from 'react';
 import { Button,View,StyleSheet,TextInput,ScrollView,} from 'react-native';
+import { color } from 'react-native-elements/dist/helpers';
 import firebase from '../../database/firebase';
 import styles from './styles';
-import style from './styles'
 
 const AddUserScreen = (props) => {
   const initalState = {
@@ -68,7 +68,7 @@ const AddUserScreen = (props) => {
       </View>
 
       <View style={styles.button}>
-        <Button title="Save User" onPress={() => saveNewUser()} />
+        <Button title="Save User" onPress={() => saveNewUser()} color="#2A9D8F" />
       </View>
     </ScrollView>
   );

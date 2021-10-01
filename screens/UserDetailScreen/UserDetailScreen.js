@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView,Button,View,Alert, ActivityIndicator, StyleSheet} from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
+import styles from './styles'
 
 import firebase from '../../database/firebase';
 
@@ -69,7 +70,7 @@ const UserDetailScreen = (props) => {
   if (loading) {
     return (
       <View style={styles.loader}>
-        <ActivityIndicator size="large" color="#9E9E9E" />
+        <ActivityIndicator size="large" color="#FAEDCD" />
       </View>
     );
   }
@@ -107,43 +108,18 @@ const UserDetailScreen = (props) => {
         <Button
           title="Delete"
           onPress={() => openConfirmationAlert()}
-          color="#E37399"
+          color="#D4A369"
         />
       </View>
       <View>
         <Button title="Update" 
         onPress={() => updateUser()}
-        color="#19AC52" 
+        color="#126782" 
         />
       </View>
     </ScrollView>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 35,
-  },
-  loader: {
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    position: "absolute",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  inputGroup: {
-    flex: 1,
-    padding: 0,
-    marginBottom: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: "#cccccc",
-  },
-  btn: {
-    marginBottom: 7,
-  },
-});
 
 export default UserDetailScreen;
